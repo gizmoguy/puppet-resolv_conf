@@ -1,6 +1,6 @@
 class resolv_conf(
   $searchpath,
-  $nameservers,
+  $nameservers = [],
   $domainname = $::domain,
   $options = undef,
   $use_dnsmasq = false
