@@ -51,7 +51,7 @@ describe 'resolv_conf' do
 
           it "should fail to compile" do
             expect {
-              should compile
+              subject.call
             }.to raise_error(Puppet::Error,
                              /domainname and searchpath are mutually exclusive parameters/)
           end
@@ -117,7 +117,7 @@ describe 'resolv_conf' do
 
           it 'should compile the template based on the class parameters' do
             content = param_value(
-              subject,
+              subject.call,
               'file',
               'resolv.conf',
               'content'
@@ -201,7 +201,7 @@ describe 'resolv_conf' do
 
           it 'should compile the template based on the class parameters' do
             content = param_value(
-              subject,
+              subject.call,
               'file',
               'resolv.conf',
               'content'
@@ -279,7 +279,7 @@ describe 'resolv_conf' do
 
           it 'should compile the template based on the class parameters' do
             content = param_value(
-              subject,
+              subject.call,
               'file',
               'resolv.conf',
               'content'
